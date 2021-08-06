@@ -1,8 +1,9 @@
 import express from "express";
 
 var router = express.Router();
+var app = express();
 
-router.post("/post", (req, res, next) => {
+app.post("/post", (req, res, next) => {
     // make sure they supplied everything needed
     if (!(req.query.message && req.query.webhook)) {
         res.status(400).send("Invalid Data. Missing message or webhook."); // return error status code
@@ -21,10 +22,14 @@ router.post("/post", (req, res, next) => {
     }));
 })
 
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
     location.href = "https://docs.google.com/document/d/1ri1cteadf0s-YbHAyKB5AdBNdkNnSeF9zSfAG90Xnz4/edit?usp=sharing";
 })
 
-setInterval(function() {
-    console.log("timer that keeps nodejs processing running");
-}, 1000 * 60 * 60);
+app.listen(process.env.port, () => {
+    console.log("running on port " + process.env.port);
+});
+
+// setInterval(function() {
+//     console.log("timer that keeps nodejs processing running");
+// }, 1000 * 60 * 60);
