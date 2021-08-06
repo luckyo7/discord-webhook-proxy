@@ -23,7 +23,7 @@ app.post("/post", (req, res, next) => {
 })
 
 app.get("/", (req, res) => {
-    location.href = "https://docs.google.com/document/d/1ri1cteadf0s-YbHAyKB5AdBNdkNnSeF9zSfAG90Xnz4/edit?usp=sharing";
+    res.redirect("https://docs.google.com/document/d/1ri1cteadf0s-YbHAyKB5AdBNdkNnSeF9zSfAG90Xnz4/edit?usp=sharing");
 })
 
 app.listen(process.env.PORT, () => {
