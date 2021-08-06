@@ -1,6 +1,6 @@
 import express from "express";
 
-export var router = express.Router();
+var router = express.Router();
 
 router.post("/post", (req, res, next) => {
     // make sure they supplied everything needed
