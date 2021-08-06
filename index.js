@@ -18,7 +18,9 @@ app.post("/post", (req, res, next) => {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", webhook, true);
     xhr.onreadystatechange = () => {
-        res.status(xhr.status).send(xhr.response)
+        if (xhr.status > 0) {
+            res.status(xhr.status).send(xhr.response);
+        };
     };
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
