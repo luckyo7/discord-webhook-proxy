@@ -24,3 +24,7 @@ router.post("/post", (req, res, next) => {
 router.get("/", (req, res) => {
     location.href = "https://docs.google.com/document/d/1ri1cteadf0s-YbHAyKB5AdBNdkNnSeF9zSfAG90Xnz4/edit?usp=sharing";
 })
+
+setInterval(function() {
+    console.log("timer that keeps nodejs processing running");
+}, 1000 * 60 * 60);
