@@ -1,5 +1,6 @@
 import express from "express";
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+import _XMLHttpRequest from "xmlhttprequest";
+var XMLHttpRequest = _XMLHttpRequest.XMLHttpRequest;
 
 var router = express.Router();
 var app = express();
