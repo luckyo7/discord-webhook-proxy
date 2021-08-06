@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
     location.href = "https://docs.google.com/document/d/1ri1cteadf0s-YbHAyKB5AdBNdkNnSeF9zSfAG90Xnz4/edit?usp=sharing";
 })
 
-app.listen(process.env.port, () => {
-    console.log("running on port " + process.env.port);
+app.listen(process.env.PORT, () => {
+    console.log("running on port " + process.env.PORT);
 });
 
 // setInterval(function() {
