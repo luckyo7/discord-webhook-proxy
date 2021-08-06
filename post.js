@@ -2,7 +2,7 @@ import express from "express";
 
 export var router = express.Router();
 
-router.get("/post", (req, res, next) => {
+router.post("/post", (req, res, next) => {
     // make sure they supplied everything needed
     if (!(req.query.message && req.query.webhook)) {
         res.status(400).send("Invalid Data. Missing message or webhook."); // return error status code
