@@ -1,4 +1,5 @@
 import express from "express";
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 var router = express.Router();
 var app = express();
