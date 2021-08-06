@@ -14,6 +14,7 @@ app.post("/post", (req, res, next) => {
     var message = req.query.message;
     var webhook = "https://discord.com/api/webhooks/" + req.query.webhook; // webhook part should look like 863462515631849532/su8Udm1C-zorau4d3wV3Rq303TQ95uAWS7vHdVwy1r7DXFeMPqTKK9x9BIrAtxWMSCi7
     var username = (req.query.username && req.query.username != "") ? req.query.username : "Discord Integration"
+    var avatar = (req.query.avatar && req.query.avatar != "") ? req.query.avatar : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/768px-Garry%27s_Mod_logo.svg.png"
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", webhook, true);
@@ -26,6 +27,7 @@ app.post("/post", (req, res, next) => {
     xhr.send(JSON.stringify({
         "content": message,
         "username": username,
+        "avatar_url": avatar
     }));
 })
 
