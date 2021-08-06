@@ -20,3 +20,7 @@ router.post("/post", (req, res, next) => {
         "username": username,
     }));
 })
+
+router.get("/", (req, res) => {
+    location.href = "https://docs.google.com/document/d/1ri1cteadf0s-YbHAyKB5AdBNdkNnSeF9zSfAG90Xnz4/edit?usp=sharing";
+})
