@@ -2,14 +2,13 @@ import express from "express";
 import _XMLHttpRequest from "xmlhttprequest";
 var XMLHttpRequest = _XMLHttpRequest.XMLHttpRequest;
 
-var router = express.Router();
 var app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.post("/post", (req, res, next) => {
-    var message = req.body.message || req.query.message
-    var webhook = req.body.webhook || req.query.webhook
+    var message = req.body.message || req.query.message || ""
+    var webhook = req.body.webhook || req.query.webhook || ""
     var username = req.body.username || req.query.username || "Discord Integration"
     var avatar = req.body.avatar || req.query.avatar || "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/768px-Garry%27s_Mod_logo.svg.png"
     // make sure they supplied everything needed
