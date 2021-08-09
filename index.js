@@ -12,11 +12,11 @@ app.post("/post", (req, res, next) => {
     var username = req.body.username || req.query.username || "Discord Integration"
     var avatar = req.body.avatar || req.query.avatar || "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/768px-Garry%27s_Mod_logo.svg.png"
     // make sure they supplied everything needed
+    console.log(message, webhook)
     if (!(message && webhook)) {
         res.status(400).send("Invalid Data. Missing message or webhook."); // return error status code
         return;
     }
-    console.log(message, webhook) 
     webhook = "https://discord.com/api/webhooks/" + webhook; // webhook part should look like 863462515631849532/su8Udm1C-zorau4d3wV3Rq303TQ95uAWS7vHdVwy1r7DXFeMPqTKK9x9BIrAtxWMSCi7
 
     var xhr = new XMLHttpRequest();
